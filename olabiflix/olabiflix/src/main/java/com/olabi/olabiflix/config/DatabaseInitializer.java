@@ -119,18 +119,16 @@ public class DatabaseInitializer implements CommandLineRunner {
 
         @Override
         public void run(String... args) throws Exception {
-                log.info("Alô? O banco tá conectado");
+                log.info("Alo? O banco tá conectado");
                 log.info("Inserindo filmes");
                 log.info("******************************");
                 filmeRepository.saveAll(filmes);
                 log.info("filmes inseridos com sucesso");
-                // filmeRepository.findAll().forEach(filme -> System.out.println(filme));
                 log.info("Filmes inseridos com sucesso");
                 log.info("---");
                 log.info("Inserindo series");
                 log.info("******************************");
                 serieRepository.saveAll(series);
-                // serieRepository.findAll().forEach(serie -> System.out.println(serie));
                 log.info("Series inseridas com sucesso");
 
         }
