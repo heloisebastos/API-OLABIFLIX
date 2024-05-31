@@ -119,7 +119,7 @@ public class DatabaseInitializer implements CommandLineRunner {
 
         @Override
         public void run(String... args) throws Exception {
-                log.info("Alo? O banco tá conectado");
+                log.info("Alo? O banco ta conectado");
                 log.info("Inserindo filmes");
                 log.info("******************************");
                 filmeRepository.saveAll(filmes);
