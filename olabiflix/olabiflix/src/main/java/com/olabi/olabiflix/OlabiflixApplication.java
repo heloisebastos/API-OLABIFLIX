@@ -14,9 +14,4 @@ public class OlabiflixApplication {
 		SpringApplication.run(OlabiflixApplication.class, args);
 	}
 
-	@GetMapping("/hello")
-	public String hello() {
-		return "Hello World!";
-	}
-
 }
