@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.olabi.olabiflix.model.entity.Filme;
 import com.olabi.olabiflix.model.entity.Serie;
 import com.olabi.olabiflix.repository.SerieRepository;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -54,8 +55,8 @@ public class SerieController {
 
     @GetMapping("/buscar-genre")
     public ResponseEntity<List<Serie>> findByGenre(@RequestParam(name = "genre", defaultValue = "") String genre) {
-        List<Serie> serie = serieRepository.findByGenreContainsIgnoreCase(genre);
-        return ResponseEntity.ok(serie);
+        List<Serie> series = serieRepository.findByGenreContainsIgnoreCase(genre);
+        return ResponseEntity.ok(series);
 
     }
 
