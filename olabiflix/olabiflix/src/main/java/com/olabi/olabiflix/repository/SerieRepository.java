@@ -12,6 +12,6 @@ public interface SerieRepository extends JpaRepository<Serie, UUID> {
 
     Optional<Serie> findByTitle(String title);
 
-    List<Serie> findByGenreContainsIgnoreCase(String genre);
+    // List<Serie> findByGenreContainsIgnoreCase(String genre);
 
 }

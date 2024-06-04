@@ -53,12 +53,13 @@ public class SerieController {
 
     }
 
-    @GetMapping("/buscar-genre")
-    public ResponseEntity<List<Serie>> findByGenre(@RequestParam(name = "genre", defaultValue = "") String genre) {
-        List<Serie> series = serieRepository.findByGenreContainsIgnoreCase(genre);
-        return ResponseEntity.ok(series);
+    // @GetMapping("/buscar-genre")
+    // public ResponseEntity<List<Serie>> findByGenre(@RequestParam(name = "genre",
+    // defaultValue = "") String genre) {
+    // List<Serie> series = serieRepository.findByGenreContainsIgnoreCase(genre);
+    // return ResponseEntity.ok(series);
 
-    }
+    // }
 
     @PostMapping("/criar")
     public Serie createSerie(@RequestBody Serie serieBody) {
