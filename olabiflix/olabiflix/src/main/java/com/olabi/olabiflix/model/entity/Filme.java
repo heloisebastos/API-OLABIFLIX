@@ -16,7 +16,7 @@ public class Filme {
     @UuidGenerator
     private UUID id;
     private String title;
-    private String year;
+    private String releaseYear;
     private String rated;
     private String released;
     private String runtime;
@@ -32,11 +32,11 @@ public class Filme {
     protected Filme() {
     }
 
-    public Filme(String title, String year, String rated, String released, String runtime, String genre,
+    public Filme(String title, String releaseYear, String rated, String released, String runtime, String genre,
             String director, String writer, String actors, String plot, String language, String country,
             String awards) {
         this.title = title;
-        this.year = year;
+        this.releaseYear = releaseYear;
         this.rated = rated;
         this.released = released;
         this.runtime = runtime;
@@ -66,12 +66,12 @@ public class Filme {
         this.title = title;
     }
 
-    public String getYear() {
-        return year;
+    public String getReleaseYear() {
+        return releaseYear;
     }
 
-    public void setYear(String year) {
-        this.year = year;
+    public void setReleaseYear(String releaseYear) {
+        this.releaseYear = releaseYear;
     }
 
     public String getRated() {
