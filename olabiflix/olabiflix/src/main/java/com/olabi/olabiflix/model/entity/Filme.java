@@ -1,15 +1,22 @@
 package com.olabi.olabiflix.model.entity;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.hibernate.annotations.UuidGenerator;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 
 @Entity
-@Table(name = "filme")
+@Table(name = "filme", uniqueConstraints = @UniqueConstraint(columnNames = { "title", "releaseYear", "director",
+        "write" }))
+
 public class Filme {
 
     @Id
@@ -28,6 +35,13 @@ public class Filme {
     private String language;
     private String country;
     private String awards;
+
+    @CreationTimestamp
+    @Column(updatable = false)
+    private LocalDateTime createdAt;
+
+    @UpdateTimestamp
+    private LocalDateTime updateAt;
 
     protected Filme() {
     }

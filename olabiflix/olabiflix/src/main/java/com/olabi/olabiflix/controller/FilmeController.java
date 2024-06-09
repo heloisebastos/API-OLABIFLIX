@@ -20,9 +20,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.olabi.olabiflix.exception.FilmeException;
 import com.olabi.olabiflix.model.entity.Filme;
 import com.olabi.olabiflix.repository.FilmeRepository;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -65,8 +67,16 @@ public class FilmeController {
     }
 
     @PostMapping("/criar")
-    public Filme createFilme(@RequestBody Filme filmeBody) {
-        return filmeRepository.save(filmeBody);
+    public ResponseEntity<Object> createFilme(@RequestBody Filme filmeBody) {
+        boolean filmeExiste = filmeRepository.existsByTitleAndReleaseYearAndDirectorAndWriter(
+                filmeBody.getTitle(), filmeBody.getReleaseYear(), filmeBody.getDirector(), filmeBody.getWriter());
+
+        if (filmeExiste) {
+            String mensagemErro = new FilmeException.DuplicateFilmeException().getMessage();
+            return new ResponseEntity<>(mensagemErro, HttpStatus.CONFLICT);
+        }
+
+        return ResponseEntity.ok(filmeRepository.save(filmeBody));
     }
 
     @DeleteMapping("/{id}/delete")
