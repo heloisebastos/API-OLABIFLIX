@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.olabi.olabiflix.exception.FilmeException;
-import com.olabi.olabiflix.model.entity.Filme;
 import com.olabi.olabiflix.model.entity.Serie;
 import com.olabi.olabiflix.model.value.Ratings;
 import com.olabi.olabiflix.repository.SerieRepository;

@@ -24,9 +24,7 @@ import com.olabi.olabiflix.exception.FilmeException;
 import com.olabi.olabiflix.model.entity.Filme;
 import com.olabi.olabiflix.repository.FilmeRepository;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 @RestController
 @RequestMapping("/filmes")
