@@ -7,6 +7,7 @@ import org.hibernate.annotations.UuidGenerator;
 
 import com.olabi.olabiflix.model.value.Ratings;
 
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -20,9 +21,12 @@ public class Serie {
     private UUID id;
     private String title;
     private String totalSeasons;
+    @ElementCollection
     private List<String> genre;
+    @ElementCollection
     private List<String> writers;
     private String poster;
+    @ElementCollection
     private List<String> actors;
     @Embedded
     private Ratings ratings;
