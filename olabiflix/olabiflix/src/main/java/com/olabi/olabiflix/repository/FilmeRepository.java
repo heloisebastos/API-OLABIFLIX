@@ -15,4 +15,7 @@ public interface FilmeRepository extends JpaRepository<Filme, UUID> {
     List<Filme> findByGenreContainsIgnoreCase(String genre);
 
     List<Filme> findByTitleOrActors(String title, String actors);
+
+    boolean existsByTitleAndReleaseYearAndDirectorAndWriter(String title, String releaseYear, String director,
+            String writer);
 }
