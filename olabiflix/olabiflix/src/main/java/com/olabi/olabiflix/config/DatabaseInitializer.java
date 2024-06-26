@@ -26,15 +26,15 @@ public class DatabaseInitializer implements CommandLineRunner {
         }
 
         public static final List<Filme> filmes = List.of(
-                        new Filme("10 Things I Hate About You", "1999", "PG-13", "31 Mar 1999", "97 min",
+                        new Filme("10 Things I Hate About You", "1999", "PG-13", "31 Mar 1999", "97min",
                                         "Comedy, Drama, Romance", "Gil Junger", "Karen McCullah, Kirsten Smith",
                                         "Heath Ledger, Julia Stiles, Joseph Gordon-Levitt, Larisa Oleynik",
-                                        "A pretty, popular teenager can't go out on a date until her ill-tempered older sister does.",
+                                        "A pretty, popular teenager can't go out on a date until her ill-temperedolder sister does.",
                                         "English, French", "USA", "2 wins & 13 nominations."),
                         new Filme("Avatar", "2009", "PG-13", "18 Dec 2009", "162 min",
                                         "Action, Adventure, Fantasy, Sci-Fi", "James Cameron", "James Cameron",
                                         "Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang",
-                                        "A paraplegic Marine dispatched to the moon Pandora on a unique mission becomes torn between following  his orders and protecting the world he feels is his home.",
+                                        "A paraplegic Marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
                                         "English,Spanish", "USA", "Won 3 Oscars.Another 86 wins&129 nominations."),
                         new Filme("Inception", "2010", "PG-13", "16 Jul 2010", "148 min",
                                         "Action,Adventure,Sci-Fi,Thriller", "Christopher Nolan", "Christopher Nolan",
@@ -48,7 +48,8 @@ public class DatabaseInitializer implements CommandLineRunner {
                                         "Benedict Cumberbatch, Chiwetel Ejiofor, Rachel McAdams, Benedict Wong",
                                         "While on a journey of physical and spiritual healing, a brilliant neurosurgeon is drawn into the world of the mystic arts.",
                                         "English", "USA", "Nominated for 1 Oscar. Another 20 wins & 65 nominations."),
-                        new Filme("The Truman Show", "1998", "PG", "05 Jun 1998", "103 min", "Comedy,Drama, Sci-Fi",
+                        new Filme("The Truman Show", "1998", "PG", "05 Jun 1998", "103 min",
+                                        "Comedy,Drama, Sci-Fi",
                                         "Peter Weir", "Andrew Niccol",
                                         "Jim Carrey, Laura Linney, Noah Emmerich, Natascha McElhone",
                                         "An insurance salesman discovers his whole life is actually a reality TV show.",
@@ -57,7 +58,8 @@ public class DatabaseInitializer implements CommandLineRunner {
 
         public static final List<Serie> series = List.of(
 
-                        new Serie("Game of Thrones", "8", List.of("Action", "Adventure", "Drama", "Fantasy", "Romance"),
+                        new Serie("Game of Thrones", "8", List.of("Action", "Adventure", "Drama",
+                                        "Fantasy", "Romance"),
                                         List.of("David Benioff", "D.B. Weiss"),
                                         "https://m.media-amazon.com/images/M/MV5BYTRiNDQwYzAtMzVlZS00NTI5LWJjYjUtMzkwNTUzMWMxZTllXkEyXkFqcGdeQXVyNDIzMzcwNjc@._V1_SX300.jpg",
                                         List.of("Peter Dinklage", "Lena Headey", "Emilia Clarke", "Kit Harington"),
@@ -73,29 +75,36 @@ public class DatabaseInitializer implements CommandLineRunner {
                                         "https://m.media-amazon.com/images/M/MV5BN2JjNmFjZmItMDVlMS00NzExLWJkOTMtY2U3ZDRiZGUyMTdhXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg",
                                         List.of("Karl Urban", "Jack Quaid", "Antony Starr", "Erin Moriarty"),
                                         new Ratings("8.7", "162770")),
-                        new Serie("This Is Us", "4", List.of("Comedy", "Drama", "Romance"), List.of("Dan Fogelman"),
+                        new Serie("This Is Us", "4", List.of("Comedy", "Drama", "Romance"),
+                                        List.of("Dan Fogelman"),
                                         "https://m.media-amazon.com/images/M/MV5BMDM2YTMzMWMtNmFhZi00ZWY4LTk1ZmUtMWExNzg3NDZmMTY4XkEyXkFqcGdeQXVyMzQ2MDI5NjU@._V1_SX300.jpg",
-                                        List.of("Milo Ventimiglia", "Mandy Moore", "Sterling K. Brown", "ChrissyMetz"),
+                                        List.of("Milo Ventimiglia", "Mandy Moore", "Sterling K. Brown",
+                                                        "ChrissyMetz"),
                                         new Ratings("8.7", "94108")),
-                        new Serie("How to Get Away with Murder", "6", List.of("Crime", "Drama", "Mystery", "Thriller"),
+                        new Serie("How to Get Away with Murder", "6", List.of("Crime", "Drama",
+                                        "Mystery", "Thriller"),
                                         List.of("Peter Nowalk"),
                                         "https://m.media-amazon.com/images/M/MV5BZDQ5ZDRhMWItNjA5Ni00MDhiLTgwN2EtZjFkYzgzNjBhZTIyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg",
                                         List.of("Viola Davis", "Billy Brown", "Jack Falahee", "Aja Naomi King"),
                                         new Ratings("8.1", "120538")),
-                        new Serie("Little Fires Everywhere", "1", List.of("Drama"), List.of("CelesteNg"),
+                        new Serie("Little Fires Everywhere", "1", List.of("Drama"),
+                                        List.of("CelesteNg"),
                                         "https://m.media-amazon.com/images/M/MV5BNmEyZjc3MzgtZjU1OS00MDlkLThmOTMtODE5OTlmYmUxMTRmXkEyXkFqcGdeQXVyMTM1NjgyNDI@._V1_SX300.jpg",
                                         List.of("Kerry Washington", "Lexi Underwood", "Reese Witherspoon",
                                                         "Joshua Jackson"),
                                         new Ratings("7.8", "19360")),
-                        new Serie("Lucifer", "5", List.of("Crime", "Drama", "Fantasy"), List.of("TomKapinos"),
+                        new Serie("Lucifer", "5", List.of("Crime", "Drama", "Fantasy"),
+                                        List.of("TomKapinos"),
                                         "https://m.media-amazon.com/images/M/MV5BNzY1YjIxOGMtOTAyZC00YTcyLWFhMzQtZTJkYTljYzU0MGRlXkEyXkFqcGdeQXVyMTAwMzM3NDI3._V1_SX300.jpg",
                                         List.of("Tom Ellis", "Lauren German", "Kevin Alejandro", "D.B. Woodside"),
                                         new Ratings("8.2", "211722")),
-                        new Serie("Anne with an E", "3", List.of("Drama"), List.of("MoiraWalley-Beckett"),
+                        new Serie("Anne with an E", "3", List.of("Drama"),
+                                        List.of("MoiraWalley-Beckett"),
                                         "https://m.media-amazon.com/images/M/MV5BNThmMzJlNzgtYmY5ZC00MDllLThmZTMtNTRiMjQwNmY0NmRhXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg",
                                         List.of("Amybeth McNulty", "Geraldine James", "R.H. Thomson", "Dalila Bela"),
                                         new Ratings("8.7", "30924")),
-                        new Serie("Breaking Bad", "5", List.of("Crime", "Drama", "Thriller"), List.of("Vince Gilligan"),
+                        new Serie("Breaking Bad", "5", List.of("Crime", "Drama", "Thriller"),
+                                        List.of("Vince Gilligan"),
                                         "https://m.media-amazon.com/images/M/MV5BMTg4NjEyNjA1NF5BMl5BanBnXkFtZTgwOTU2Mjg3NDE@._V1_SX300.jpg",
                                         List.of("Bryan Cranston", "Aaron Paul", "Anna Gunn", "Betsy Brandt"),
                                         new Ratings("9.5", "1496588")),
@@ -115,7 +124,8 @@ public class DatabaseInitializer implements CommandLineRunner {
 
         @Override
         public void run(String... args) throws Exception {
-                log.info("Alo? O banco ta conectado");
+                log.info("Alo? O banco ta conectado?");
+                log.info("Opa,bom ? Aqui esta tudo certo.");
                 log.info("Inserindo filmes");
                 log.info("******************************");
                 filmeRepository.saveAll(filmes);

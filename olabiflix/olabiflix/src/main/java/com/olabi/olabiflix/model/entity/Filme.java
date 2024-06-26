@@ -12,6 +12,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "filme", uniqueConstraints = @UniqueConstraint(columnNames = { "title", "releaseYear", "director",
@@ -22,13 +25,30 @@ public class Filme {
     @Id
     @UuidGenerator
     private UUID id;
+
+    @NotBlank(message = "Title não pode ser vazio")
+    @Size(max = 225)
+    @Column(nullable = false)
     private String title;
+
+    @NotBlank(message = "Title não pode ser vazio")
+    @Pattern(regexp = "^\\d{4}$", message = "releaseYear precisa ser")
+    @Column(nullable = false)
+
     private String releaseYear;
     private String rated;
     private String released;
     private String runtime;
     private String genre;
+
+    @NotBlank(message = "Director não pode ser vazio")
+    @Size(max = 225)
+    @Column(nullable = false)
     private String director;
+
+    @NotBlank(message = "Writer não pode ser vazio")
+    @Size(max = 225)
+    @Column(nullable = false)
     private String writer;
     private String actors;
     private String plot;
